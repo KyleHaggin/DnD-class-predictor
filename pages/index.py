@@ -29,17 +29,14 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Value Proposition
+            ## What Dungeons and Dragons 5th Edition class are you?
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
+            This tool can predict your DnD 5e class based on a a veriety of given statistsics.
 
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
-
+           
             """
         ),
-        dcc.Link(dbc.Button('Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Find Your Class', color='primary'), href='/predictions')
     ],
     md=4,
 )
