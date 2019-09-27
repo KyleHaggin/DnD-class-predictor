@@ -170,4 +170,4 @@ columns = [
     xgbImg
 ]
 
-layout = dbc.Row([columns])
+layout = dbc.Col([columns])
