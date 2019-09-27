@@ -201,7 +201,9 @@ data_column = dbc.Col(
         Input('has_spells', 'value')
     ],
 )
-def predict(level, HP, AC, Str, Dex, Con, Int, Wis, Cha, HP_per_level, background, processedAlignment, processedRace, has_spells, has_feats):
+
+def predict(level, HP, AC, Str, Dex, Con, Int, Wis, Cha, background, processedAlignment, processedRace, has_spells, has_feats):
+    HP_per_level = (HP / level)
     df = pd.DataFrame(
         columns=['level', 'HP', 'AC', 'Str', 'Dex', 'Con', 'Int', 'Wis', 'Cha', 'HP_per_level', 'background', 'processedAlignment', 'processedRace', 'has_spells', 'has_feats'],
         data=[[level, HP, AC, Str, Dex, Con, Int, Wis, Cha, HP_per_level, background, processedAlignment, processedRace, has_spells, has_feats]]
