@@ -145,6 +145,24 @@ data_column = dbc.Col(
     dcc.Input(id='Wis', type='number', placeholder='Wisdom'),
     dcc.Input(id='Cha', type='number', placeholder='Charisma')
     ],
+
+    dcc.Markdown('#### Feats'),
+    dcc.RadioItems(
+        options=[
+            {'label': 'Your character does not have feat/s', 'value': False},
+            {'label': 'Your character has feat/s', 'value': True}
+        ],
+        value=False
+    ),
+
+    dcc.Markdown('#### Spells')
+    dcc.RadioItems(
+        options=[
+            {'label': 'Your character does not have spells', 'value': False},
+            {'label': 'Your character has spells', 'value': True}
+        ],
+        value=False
+    )
 )
 
 layout = dbc.Row([data_column, output_column])
