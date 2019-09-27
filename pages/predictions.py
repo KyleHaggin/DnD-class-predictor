@@ -19,11 +19,19 @@ data_column = dbc.Col(
             """
         
             ## Predictions
+            Use the input menus below to input your character statistics.
 
 
             """
         )
-    ]
+    ],
+    dbc.Row(
+        dbc.Col(
+            html.Div([
+                
+            ])
+        )
+    )
 )
 
 layout = dbc.Row([data_column, output_column])
