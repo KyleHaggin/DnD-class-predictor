@@ -13,6 +13,15 @@ output_column = dbc.Col(
     md=4,
 )
 
+# Dicitonarys for the values
+
+background_dict = {
+    'Outlander': 'Outlander',
+    'Acolyte': 'Acolyte',
+    'Criminal': 'Criminal',
+    'Soldier': 'Soldier'
+}
+
 data_column = dbc.Col(
     [
          dcc.Markdown(
@@ -28,10 +37,13 @@ data_column = dbc.Col(
     dcc.Markdown('#### Background'),
     dcc.Dropdown(
         id='Background',
-        options = [
-            {'label': 'Outlander', 'value': 'Outlander'},
-            {'label': 'Acolyte', 'value': 'Acolyte'},
-        ],
+        options = [{'label': background_dict[key], 'value': key} for key in background_dict],
+        # options = [
+        #     {'label': 'Outlander', 'value': 'Outlander'},
+        #     {'label': 'Acolyte', 'value': 'Acolyte'},
+        #     {'label': 'Criminal', 'value': 'Criminal'},
+        #     {'label': 'Soldier', 'value': 'Soldier'},
+        # ],
         value = 'Outlander',
         className = 'mb-5',
     )
