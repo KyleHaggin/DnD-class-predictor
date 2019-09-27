@@ -98,7 +98,7 @@ data_column = dbc.Col(
     
     dcc.Markdown('#### Background'),
     dcc.Dropdown(
-        id='Background',
+        id='background',
         options = [{'label': background_dict[key], 'value': key} for key in background_dict],
         value = 'Outlander',
         className = 'mb-5',
@@ -106,7 +106,7 @@ data_column = dbc.Col(
 
     dcc.Markdown('#### Alignment'),
     dcc.Dropdown(
-        id='Alignment',
+        id='processedAlignment',
         options = [{'label': alignment_dict[key], 'value': key} for key in alignment_dict],
         value = 'CN',
         className = 'mb-5'
@@ -114,7 +114,7 @@ data_column = dbc.Col(
 
     dcc.Markdown('#### Race'),
     dcc.Dropdown(
-        id ='Background',
+        id ='processedRace',
         options = [{'label': race_dict[key], 'value': key} for key in race_dict],
         value = 'Human',
         className = 'mb-5'
@@ -122,6 +122,7 @@ data_column = dbc.Col(
 
     dcc.Markdown('#### Level'),
     dcc.Slider(
+        id = 'level',
         min = 1,
         max = 20,
         marks = {i: format(i) for i in range(1, 21)},
@@ -129,11 +130,20 @@ data_column = dbc.Col(
         className = 'mb-6'
     ),
 
+    dcc.Markdown('#### Armour Class'),
+    dcc.Input(
+        id = 'AC',
+        placeholder = 'Enter Your Armour Class',
+        type = 'number',
+        value = 10,
+    ),
+
     dcc.Markdown('#### Hit Points'),
     dcc.Input(
+        id = 'HP',
         placeholder = 'Enter Your Maximum Hit Point Value',
         type = 'number',
-        value ='10',
+        value = 10,
         className = 'mb-7'
     ),
 
@@ -147,6 +157,7 @@ data_column = dbc.Col(
 
     dcc.Markdown('#### Feats'),
     dcc.RadioItems(
+        id = 'has_feats',
         options=[
             {'label': 'Your character does not have feat/s', 'value': False},
             {'label': 'Your character has feat/s', 'value': True}
@@ -156,6 +167,7 @@ data_column = dbc.Col(
 
     dcc.Markdown('#### Spells'),
     dcc.RadioItems(
+        id = 'has_spells',
         options=[
             {'label': 'Your character does not have spells', 'value': False},
             {'label': 'Your character has spells', 'value': True}
