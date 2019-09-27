@@ -42,7 +42,19 @@ background_dict = {
     'Pirate': 'Pirate',
     'Courtier': 'Courtier',
     'Inheritor': 'Inheritor',
-    'Custom/Other': 'Custom'
+    'Custom': 'Custom/Other'
+}
+
+alignment_dict = {
+    'LG': 'Lawful Good',
+    'NG': 'Neutral Good',
+    'CG': 'Chaotic Good',
+    'LN': 'Lawful Neutral',
+    'NN': 'True Neutral',
+    'CN': 'Chaotic Neutral',
+    'LE': 'Lawful Evil',
+    'NE': 'Neutral Evil',
+    'CE': 'Chaotic Evil'
 }
 
 data_column = dbc.Col(
@@ -61,14 +73,16 @@ data_column = dbc.Col(
     dcc.Dropdown(
         id='Background',
         options = [{'label': background_dict[key], 'value': key} for key in background_dict],
-        # options = [
-        #     {'label': 'Outlander', 'value': 'Outlander'},
-        #     {'label': 'Acolyte', 'value': 'Acolyte'},
-        #     {'label': 'Criminal', 'value': 'Criminal'},
-        #     {'label': 'Soldier', 'value': 'Soldier'},
-        # ],
         value = 'Outlander',
         className = 'mb-5',
+    ),
+
+    dcc.Markdown('#### Alignment'),
+    dcc.Dropdown(
+        id='Alignment',
+        options = [{'label': alignment_dict[key], 'value': key} for key in alignment_dict],
+        value = 'CN',
+        className = 'mb-5'
     )
     ],
 )
