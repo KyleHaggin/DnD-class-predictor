@@ -25,12 +25,15 @@ data_column = dbc.Col(
             """
         )
     ],
-    dbc.Row(
-        dbc.Col(
-            html.Div([
-                
-            ])
-        )
+    dcc.Markdown('#### Background'),
+    dcc.Dropdown(
+        id='Background',
+        options = [
+            {'label': 'Outlander', 'value': 'Outlander'},
+            {'label': 'Acolyte', 'value': 'Acolyte'},
+        ],
+        value = 'Custom',
+        className = 'mb-5',
     )
 )
 
