@@ -201,12 +201,12 @@ data_column = dbc.Col(
         Input('has_spells', 'value')
     ]
 )
-def predict(level, HP, AC, Str, Dex, Con, Int, Wis, Cha, HP_per_level, background, processedAlignment, processedRace, levelGroup, has_spells, has_feats):
+def predict(level, HP, AC, Str, Dex, Con, Int, Wis, Cha, HP_per_level, background, processedAlignment, processedRace, has_spells, has_feats):
     df = pd.DataFrame(
-        columns=['level', 'HP', 'AC', 'Str', 'Dex', 'Con', 'Int', 'Wis', 'Cha', 'HP_per_level', 'background', 'processedAlignment', 'processedRace', 'levelGroup', 'has_spells', 'has_feats'],
-        data=[[level, HP, AC, Str, Dex, Con, Int, Wis, Cha, (HP / level), background, processedAlignment, processedRace, levelGroup, has_spells, has_feats]]
+        columns=['level', 'HP', 'AC', 'Str', 'Dex', 'Con', 'Int', 'Wis', 'Cha', 'HP_per_level', 'background', 'processedAlignment', 'processedRace', 'has_spells', 'has_feats'],
+        data=[[level, HP, AC, Str, Dex, Con, Int, Wis, Cha, (HP / level), background, processedAlignment, processedRace, has_spells, has_feats]]
     )
     y_pred = pipeline.predict(df)[0]
-    return f'Your predicted class is {y_pred}'
+    return(f'Your predicted class is {y_pred}.')
 
 layout = dbc.Row([data_column, output_column])
