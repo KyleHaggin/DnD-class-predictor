@@ -19,7 +19,30 @@ background_dict = {
     'Outlander': 'Outlander',
     'Acolyte': 'Acolyte',
     'Criminal': 'Criminal',
-    'Soldier': 'Soldier'
+    'Soldier': 'Soldier',
+    'Hermit': 'Hermit',
+    'Sailor': 'Sailor',
+    'Noble': 'Noble',
+    'Folk Hero': 'Folk Hero',
+    'Charlatan': 'Charlatan',
+    'Far Traveler': 'Far Traveler',
+    'Haunted One': 'Haunted One',
+    'Sage': 'Sage',
+    'Knight': 'Knight',
+    'Urban Bounty Hunter': 'Urban Bounty Hunter',
+    'Mercenary Veteran': 'Mercenary Veteran',
+    'Entertainer': 'Entertainer',
+    'Urchin': 'Urchin',
+    'Cloistered Scholar': 'Cloistered Scholar',
+    'Faction Agent': 'Faction Agent',
+    'Barbarian Tribe Member': 'Barbarian Tribe Member',
+    'City Watch': 'City Watch',
+    'Clan Crafter': 'Clan Crafter',
+    'Guild Artisan': 'Guild Artisan',
+    'Pirate': 'Pirate',
+    'Courtier': 'Courtier',
+    'Inheritor': 'Inheritor',
+    'Custom/Other': 'Custom'
 }
 
 data_column = dbc.Col(
