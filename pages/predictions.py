@@ -124,7 +124,7 @@ data_column = dbc.Col(
     dcc.Slider(
         min = 1,
         max = 20,
-        marks = {i: format(i) for i in range(20)},
+        marks = {i: format(i) for i in range([1], 20[,1])},
         value = 1
     )
     ],
