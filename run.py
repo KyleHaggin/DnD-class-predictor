@@ -45,7 +45,7 @@ footer = dbc.Container(
             html.P(
                 [
                     html.Span('Your Name', className='mr-2'), 
-                    html.A(html.I(className='fas fa-envelope-square mr-5'), href='mailto:kylelhaggin@gmail.com'), 
+                    html.A(html.I(className='fas fa-envelope-square mr-1'), href='mailto:kylelhaggin@gmail.com'), 
                     html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/KyleHaggin/DnD-class-predictor'), 
                 ], 
                 className='lead'

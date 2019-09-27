@@ -155,7 +155,7 @@ data_column = dbc.Col(
         value=False
     ),
 
-    dcc.Markdown('#### Spells')
+    dcc.Markdown('#### Spells'),
     dcc.RadioItems(
         options=[
             {'label': 'Your character does not have spells', 'value': False},
