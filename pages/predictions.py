@@ -143,8 +143,7 @@ data_column = dbc.Col(
     dcc.Input(id='Con', type='number', placeholder='Constitution'),
     dcc.Input(id='Int', type='number', placeholder='Intelligence'),
     dcc.Input(id='Wis', type='number', placeholder='Wisdom'),
-    dcc.Input(id='Cha', type='number', placeholder='Charisma')
-    ],
+    dcc.Input(id='Cha', type='number', placeholder='Charisma'),
 
     dcc.Markdown('#### Feats'),
     dcc.RadioItems(
@@ -163,6 +162,9 @@ data_column = dbc.Col(
         ],
         value=False
     )
+    ],
+
+
 )
 
 layout = dbc.Row([data_column, output_column])
