@@ -13,7 +13,7 @@ pipeline = load('assets/pipeline.joblib')
 output_column = dbc.Col(
     [
         html.H2('Predicted Class'),
-        html.Div(id='justClass'),
+        html.Div(id='predicted-justClass', className='lead'),
     ],
     md=4,
 )
@@ -185,7 +185,7 @@ data_column = dbc.Col(
 )
 
 @app.callback(
-    Output('justClass', 'children'),
+    Output('predicted-justClass', 'children'),
     [
         Input('background', 'value'),
         Input('processedAlignment', 'value'),
@@ -203,13 +203,12 @@ data_column = dbc.Col(
         Input('has_spells', 'value')
     ],
 )
-
 def predict(level, HP, AC, Str, Dex, Con, Int, Wis, Cha, HP_per_level, background, processedAlignment, processedRace, levelGroup, has_spells, has_feats):
     df = pd.DataFrame(
         columns=['level', 'HP', 'AC', 'Str', 'Dex', 'Con', 'Int', 'Wis', 'Cha', 'HP_per_level', 'background', 'processedAlignment', 'processedRace', 'levelGroup', 'has_spells', 'has_feats'],
-        data=[[level, HP, AC, Str, Dex, Con, Int, Wis, Cha, HP_per_level, background, processedAlignment, processedRace, levelGroup, has_spells, has_feats]]
+        data=[[level, HP, AC, Str, Dex, Con, Int, Wis, Cha, (HP / level), background, processedAlignment, processedRace, levelGroup, has_spells, has_feats]]
     )
     y_pred = pipeline.predict(df)[0]
-    return f'Your predicted class is {y_pred:.0f}'
+    return f'Your predicted class is {y_pred}'
 
 layout = dbc.Row([data_column, output_column])
