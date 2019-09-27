@@ -126,7 +126,15 @@ data_column = dbc.Col(
         max = 20,
         marks = {i: format(i) for i in range(1, 21)},
         value = 1
+    ),
+
+    dcc.Markdown('#### Hit Points'),
+    dcc.Input(
+        placeholder='Enter Your Maximum Hit Point Value',
+        type='number',
+        value='10'
     )
+    
     ],
 )
 
