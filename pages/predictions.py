@@ -114,7 +114,7 @@ data_column = dbc.Col(
 
     dcc.Markdown('#### Race'),
     dcc.Dropdown(
-        id='Background',
+        id ='Background',
         options = [{'label': race_dict[key], 'value': key} for key in race_dict],
         value = 'Human',
         className = 'mb-5'
@@ -125,16 +125,25 @@ data_column = dbc.Col(
         min = 1,
         max = 20,
         marks = {i: format(i) for i in range(1, 21)},
-        value = 1
+        value = 1,
+        className = 'mb-6'
     ),
 
     dcc.Markdown('#### Hit Points'),
     dcc.Input(
-        placeholder='Enter Your Maximum Hit Point Value',
-        type='number',
-        value='10'
-    )
-    
+        placeholder = 'Enter Your Maximum Hit Point Value',
+        type = 'number',
+        value ='10',
+        className = 'mb-7'
+    ),
+
+    dcc.Markdown('#### Characteristic Scores'),
+    dcc.Input(id='Str', type='number', placeholder='Strength'),
+    dcc.Input(id='Dex', type='number', placeholder='Dexterity'),
+    dcc.Input(id='Con', type='number', placeholder='Constitution'),
+    dcc.Input(id='Int', type='number', placeholder='Intelligence'),
+    dcc.Input(id='Wis', type='number', placeholder='Wisdom'),
+    dcc.Input(id='Cha', type='number', placeholder='Charisma')
     ],
 )
 
