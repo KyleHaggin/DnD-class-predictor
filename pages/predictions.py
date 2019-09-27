@@ -57,6 +57,33 @@ alignment_dict = {
     'CE': 'Chaotic Evil'
 }
 
+race_dict = {
+    'Human': 'Human',
+    'Elf': 'Elf',
+    'Dwarf': 'Dwarf',
+    'Half-Elf': 'Half-Elf',
+    'Dragonborn': 'Dragonborn',
+    'Half-Ork': 'Half-Ork',
+    'Tiefling': 'Tiefling',
+    'Halfling': 'Halfling',
+    'Gnome': 'Gnome',
+    'Aasimar': 'Aasimar',
+    'Goliath': 'Goliath',
+    'Turtle': 'Turtle',
+    'Goblin': 'Goblin',
+    'Tabaxi': 'Tabaxi',
+    'Firbolg': 'Firbolg',
+    'Genasi': 'Genasi',
+    'Kenku': 'Kenku',
+    'Aarakocra': 'Aarakocra',
+    'Triton': 'Triton',
+    'Lizardfolk': 'Lizardfolk',
+    'Kobold': 'Kolbold',
+    'Yaun-Ti': 'Yaun-Ti',
+    'Ork': 'Ork',
+    'Bugbear': 'Bugbear'
+}
+
 data_column = dbc.Col(
     [
          dcc.Markdown(
@@ -82,6 +109,14 @@ data_column = dbc.Col(
         id='Alignment',
         options = [{'label': alignment_dict[key], 'value': key} for key in alignment_dict],
         value = 'CN',
+        className = 'mb-5'
+    ),
+
+    dcc.Markdown('#### Race'),
+    dcc.Dropdown(
+        id='Background',
+        options = [{'label': race_dict[key], 'value': key} for key in race_dict],
+        value = 'Human',
         className = 'mb-5'
     )
     ],
