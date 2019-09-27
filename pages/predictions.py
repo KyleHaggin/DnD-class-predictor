@@ -15,7 +15,7 @@ output_column = dbc.Col(
     [
         html.H2('Predicted Class'),
         html.Div(id='predicted-justClass', className='lead'),
-        html.Img(src='assets/dndParty.png', className='img-thumbnail')
+        html.Img(src='/assets/dndParty.png')
     ]
 )
 
