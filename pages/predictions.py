@@ -118,6 +118,14 @@ data_column = dbc.Col(
         options = [{'label': race_dict[key], 'value': key} for key in race_dict],
         value = 'Human',
         className = 'mb-5'
+    ),
+
+    dcc.Markdown('#### Level'),
+    dcc.Slider(
+        min = 1,
+        max = 20,
+        marks = {i: 'Label {}'.format(i+1) for i in range(29)},
+        value = 1
     )
     ],
 )
