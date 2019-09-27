@@ -6,24 +6,24 @@ from dash.dependencies import Input, Output
 
 from app import app
 
-column1 = dbc.Col(
+output_column = dbc.Col(
     [
-        dcc.Markdown(
+
+    ],
+    md=4,
+)
+
+data_column = dbc.Col(
+    [
+         dcc.Markdown(
             """
         
             ## Predictions
 
 
             """
-        ),
-    ],
-    md=4,
-)
-
-column2 = dbc.Col(
-    [
-        
+        )
     ]
 )
 
-layout = dbc.Row([column1, column2])
+layout = dbc.Row([data_column, output_column])
