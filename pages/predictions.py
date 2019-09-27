@@ -206,6 +206,6 @@ def predict(level, HP, AC, Str, Dex, Con, Int, Wis, Cha, HP_per_level, backgroun
         data=[[level, HP, AC, Str, Dex, Con, Int, Wis, Cha, HP_per_level, background, processedAlignment, processedRace, has_spells, has_feats]]
     )
     y_pred = pipeline.predict(df)[0]
-    return(y_pred)
+    return f'Expected class is {y_pred:10.0f}.'
 
 layout = dbc.Row([data_column, output_column])
