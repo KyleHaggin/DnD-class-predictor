@@ -52,9 +52,9 @@ column1 = dbc.Col(
 #            hover_name="country", log_x=True, size_max=60)
 
 column2 = dbc.Col(
-    # [
-    #     dcc.Graph(figure=fig),
-    # ]
+    [
+        html.Img(src='/assets/dndParty.png')
+    ]
 )
 
 layout = dbc.Row([column1, column2])

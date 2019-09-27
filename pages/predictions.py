@@ -162,11 +162,12 @@ data_column = dbc.Col(
     dcc.Input(id='Cha', type='number', placeholder='Charisma'),
 
     dcc.Markdown('#### Feats'),
+
     dcc.RadioItems(
         id = 'has_feats',
         options=[
-            {'label': 'Your character does not have feat/s', 'value': False},
-            {'label': 'Your character has feat/s', 'value': True}
+            {'label': 'Your character does not have feat/s', 'value': 0},
+            {'label': 'Your character has feat/s', 'value': 1}
         ],
         value=False
     ),
@@ -175,8 +176,8 @@ data_column = dbc.Col(
     dcc.RadioItems(
         id = 'has_spells',
         options=[
-            {'label': 'Your character does not have spells', 'value': False},
-            {'label': 'Your character has spells', 'value': True}
+            {'label': 'Your character does not have spells', 'value': 0},
+            {'label': 'Your character has spells', 'value': 1}
         ],
         value=False
     )
