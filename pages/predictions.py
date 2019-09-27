@@ -15,7 +15,7 @@ output_column = dbc.Col(
     [
         html.H2('Predicted Class'),
         html.Div(id='predicted-justClass', className='lead'),
-        html.Img(src='/assets/dndParty.png')
+        html.Img(src='assets/dndParty.jpg')
     ]
 )
 
@@ -136,6 +136,12 @@ data_column = dbc.Col(
         className = 'mb-6'
     ),
 
+    dbc.Row([
+        dbc.Col(
+            html.Div(' ',style={'text-align': 'center','font-size':16,'font-weight':'bold','height':'36px'})
+        )   
+    ]),
+
     dcc.Markdown('#### Armour Class'),
     dcc.Input(
         id = 'AC',
@@ -169,7 +175,7 @@ data_column = dbc.Col(
             {'label': 'Your character does not have feat/s', 'value': 0},
             {'label': 'Your character has feat/s', 'value': 1}
         ],
-        value=False
+        value=0
     ),
 
     dcc.Markdown('#### Spells'),
@@ -179,7 +185,7 @@ data_column = dbc.Col(
             {'label': 'Your character does not have spells', 'value': 0},
             {'label': 'Your character has spells', 'value': 1}
         ],
-        value=False
+        value=0
     )
     ]
 )
@@ -204,12 +210,14 @@ data_column = dbc.Col(
     ],
 )
 
-def predict(level, HP, AC, Str, Dex, Con, Int, Wis, Cha, background, processedAlignment, processedRace, has_spells, has_feats):
+def predict(background, processedAlignment, processedRace, level, AC, HP, Str, Dex, Con, Int, Wis, Cha, has_feats, has_spells):
     df = pd.DataFrame(
         columns=['level', 'HP', 'AC', 'Str', 'Dex', 'Con', 'Int', 'Wis', 'Cha', 'background', 'processedAlignment', 'processedRace', 'has_spells', 'has_feats'],
         data=[[level, HP, AC, Str, Dex, Con, Int, Wis, Cha, background, processedAlignment, processedRace, has_spells, has_feats]]
     )
-    y_pred = pipeline.predict(df)[0]
-    return f'Expected class is {y_pred:10.0f}.'
+    print(df)
+    y_pred = pipeline.predict(df)
+    print(y_pred)
+    return f'Expected class is {y_pred}.'
 
 layout = dbc.Row([data_column, output_column])
