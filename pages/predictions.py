@@ -179,9 +179,7 @@ data_column = dbc.Col(
         ],
         value=False
     )
-    ],
-
-
+    ]
 )
 
 @app.callback(
@@ -201,7 +199,7 @@ data_column = dbc.Col(
         Input('Cha', 'value'),
         Input('has_feats', 'value'),
         Input('has_spells', 'value')
-    ],
+    ]
 )
 def predict(level, HP, AC, Str, Dex, Con, Int, Wis, Cha, HP_per_level, background, processedAlignment, processedRace, levelGroup, has_spells, has_feats):
     df = pd.DataFrame(
