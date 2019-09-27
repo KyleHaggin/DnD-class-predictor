@@ -23,8 +23,8 @@ data_column = dbc.Col(
 
 
             """
-        )
-    ],
+        ),
+    
     dcc.Markdown('#### Background'),
     dcc.Dropdown(
         id='Background',
@@ -32,9 +32,10 @@ data_column = dbc.Col(
             {'label': 'Outlander', 'value': 'Outlander'},
             {'label': 'Acolyte', 'value': 'Acolyte'},
         ],
-        value = 'Custom',
+        value = 'Outlander',
         className = 'mb-5',
     )
+    ],
 )
 
 layout = dbc.Row([data_column, output_column])
